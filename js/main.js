@@ -1,4 +1,9 @@
-﻿// Your code here!
+﻿/*
+	File info.
+	Uses XMLHttpRequest calls to request lookup
+	Inserts JSON data as HTML via AJAX
+*/
+
 
 //document.onload = function () {
 //	var xhr = new XMLHttpRequest;
@@ -6,6 +11,16 @@
 //	console.log(xhr.response);
 //}
 
+/*
+	//	GLOSSARY  //
+
+	cl = button clicks
+	bd = board
+	btn = button
+	lp = last parameter (temp variable)
+
+
+*/
 
 var output = document.getElementById("output-container");	//	define HTML area to display AJAX data
 var btn = document.getElementById("btn");	//	create button reference
@@ -21,7 +36,7 @@ var e621 = {
 		"params": ["-male", "*_balls"]
 	}
 };
-var board = {
+var bd = {
 	"e621": e621
 };
 
@@ -43,7 +58,7 @@ function makeURL(url) {
 	// Append parameters (tags)
 	if (lastParams != document.getElementById("parameters").value)
 		outputDestroy();
-	var tags = (params == "") ? board.e621.index.params : params;
+	var tags = (params == "") ? e621.index.params : params;
 	for (i = 0; i < tags.length; i++) {
 		url += (i == 0) ? 'tags=' + tags[i] : "+" + tags[i];
 	}
