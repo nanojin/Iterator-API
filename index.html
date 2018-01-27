@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>JSON/AJAX Tutorial (August 22, 2017)</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header>
+		<h1>JSON Tutorial</h1>
+		<button id="btn">Fetch Data from e621.net</button>
+		<br />
+		<div class="search">
+			<div>
+				<input id="parameters" type="text" class="searchBar" placeholder="Keyword search" />
+				<input id="maxposts" type="text" class="ar" placeholder="20" onkeypress="return isNumberKey(event)" onpaste="return false" />
+			</div>
+			<div class="clearBtn">
+				<button id="reset-btn">Clear search</button>
+			</div>
+		</div>
+	</header>
+	<div id="output-container"></div>
+	<script src="js/main.js"></script>
+	<script language=Javascript>
+      <!--
+		var maxposts = document.getElementById("maxposts");
+		maxposts.addEventListener("keyup", function () {
+			var minval = 1
+			var maxval = 320
+			var value = document.getElementById("maxposts").value * 1;
+			document.getElementById("maxposts").value = (value < minval || value > maxval) ? (value < minval) ? null : maxval : value;
+		})
+      function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+      //-->
+	</script>
+</body>
+</html>
